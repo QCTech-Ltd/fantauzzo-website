@@ -1,0 +1,62 @@
+# .cursorrules — fantauzzo-website
+
+## STACK E VERSIONI
+- Next.js 15 con App Router — MAI usare Pages Router
+- React 19
+- Tailwind CSS 4 — usare CSS custom properties, MAI hardcodare colori hex nel JSX
+- TypeScript strict — MAI usare `any`
+- Framer Motion solo dove aggiunge valore percepibile — no animazioni decorative inutili
+
+## STRUTTURA
+- Tutti i testi in `lib/content.ts` — MAI stringhe hardcodate nei componenti
+- Tutti i metadata SEO in `lib/metadata.ts`
+- Un componente = un file = una responsabilità
+- Nessun componente oltre 150 righe — splittare se necessario
+
+## PALETTE — NON DEVIARE MAI
+- bg: #FDF5F0
+- accent-light: #F5C49A
+- primary: #C8502D
+- dark: #5C1E10
+- text: #2A1A10
+- muted: #9A7B6B
+- white: #FFFFFF
+Usare SEMPRE le variabili CSS — mai i valori hex diretti nel JSX/TSX
+
+## COMPONENTI
+- Ogni componente ha props tipizzate con TypeScript interface
+- MAI prop drilling oltre 2 livelli — usare composizione
+- Responsive-first: mobile → tablet → desktop
+- ScrollToTop con effetto ring `#C8502D` — OBBLIGATORIO in ogni pagina
+
+## FORM CONTATTO
+- Validazione lato client con react-hook-form
+- API route: `app/api/contact/route.ts` → Resend
+- In caso di fallback: Aruba SMTP smtps.aruba.it:465
+- Mostrare stato loading, success, error — MAI submit silenzioso
+
+## SEO
+- Ogni pagina ha metadata esplicito in `lib/metadata.ts`
+- JSON-LD LocalBusiness + LegalService nel root layout
+- next-sitemap configurato con tutte le pagine
+- Immagini: attributo alt sempre presente e descrittivo
+- Open Graph: og:title, og:description, og:image per ogni pagina
+
+## IMMAGINI
+- Formato WebP obbligatorio
+- next/image con width, height e alt sempre specificati
+- Placeholder blur per le immagini hero
+- MAI <img> nativo — sempre next/image
+
+## PERFORMANCE
+- Target Lighthouse: 90+ su tutte le metriche
+- Font: next/font/google per Inter e Playfair Display
+- Nessun import CSS globale non necessario
+- Lazy loading per componenti below the fold
+
+## ERRORI COMUNI DA EVITARE
+- MAI `export default function Page()` senza metadata nella stessa pagina
+- MAI useState in Server Components
+- MAI fetch senza error handling
+- MAI colori hardcodati — sempre variabili CSS
+- MAI testi hardcodati — sempre da lib/content.ts
