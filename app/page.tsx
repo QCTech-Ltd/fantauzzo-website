@@ -6,6 +6,7 @@ import { homeMetadata } from "@/lib/metadata";
 
 export const metadata = homeMetadata;
 
+// Home page — assembla le sezioni principali del sito
 export default function Home() {
   return (
     <>
