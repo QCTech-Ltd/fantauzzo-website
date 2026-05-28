@@ -55,6 +55,7 @@ export async function POST(request: Request) {
   try {
     const apiKey = process.env.RESEND_API_KEY;
     const contactEmail = process.env.CONTACT_EMAIL;
+    const emailTo = process.env.EMAIL_TO ?? contactEmail;
 
     if (!apiKey || apiKey === "re_xxxxxxxxxxxx") {
       return NextResponse.json(
@@ -63,7 +64,7 @@ export async function POST(request: Request) {
       );
     }
 
-    if (!contactEmail) {
+    if (!emailTo) {
       return NextResponse.json(
         { error: siteContent.contatti.form.unavailable },
         { status: 503 },
@@ -100,8 +101,8 @@ export async function POST(request: Request) {
     const resend = new Resend(apiKey);
 
     const { data, error } = await resend.emails.send({
-      from: `Studio Fantauzzo <noreply@${contactEmail.split("@")[1] ?? "studiofantauzzo.it"}>`,
-      to: contactEmail,
+      from: process.env.EMAIL_FROM ?? "onboarding@resend.dev",
+      to: emailTo,
       replyTo: email,
       subject: `[Contatti Sito] ${subjectLabel} — ${name}`,
       html: `
