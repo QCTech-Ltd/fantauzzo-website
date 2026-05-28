@@ -14,7 +14,7 @@ export const siteContent = {
       full: "Via Ercole Bernabei 19, 90145 Palermo",
     },
     url: "https://studiofantauzzo.it",
-    portaleUrl: "https://portale.studiofantauzzo.it",
+    portaleUrl: "https://fantauzzo-portal.vercel.app",
   },
 
   header: {
@@ -27,7 +27,6 @@ export const siteContent = {
       { label: "Contatti", href: "/contatti" },
     ],
     ctaAreaRiservata: "Area Riservata",
-    ctaAreaRiservataTooltip: "Disponibile a breve",
   },
 
   home: {

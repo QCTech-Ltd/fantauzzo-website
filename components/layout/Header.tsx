@@ -6,9 +6,12 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { siteContent } from "@/lib/content";
 
+const areaRiservataClassName =
+  "inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90";
+
 export default function Header() {
   const pathname = usePathname();
-  const { header } = siteContent;
+  const { header, studio } = siteContent;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -63,23 +66,14 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <div className="group relative">
-            <button
-              type="button"
-              aria-disabled="true"
-              aria-describedby="area-riservata-tooltip"
-              className="cursor-not-allowed rounded-md border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white/70"
-            >
-              {header.ctaAreaRiservata}
-            </button>
-            <span
-              id="area-riservata-tooltip"
-              role="tooltip"
-              className="pointer-events-none absolute right-0 top-full z-10 mt-2 whitespace-nowrap rounded-md bg-dark px-3 py-1.5 text-xs text-white opacity-0 shadow-lg ring-1 ring-accent-light transition-opacity group-hover:opacity-100 group-focus-within:opacity-100"
-            >
-              {header.ctaAreaRiservataTooltip}
-            </span>
-          </div>
+          <a
+            href={studio.portaleUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={areaRiservataClassName}
+          >
+            {header.ctaAreaRiservata}
+          </a>
         </div>
 
         <button
@@ -124,23 +118,14 @@ export default function Header() {
               );
             })}
             <li className="pt-2">
-              <div className="group relative">
-                <button
-                  type="button"
-                  aria-disabled="true"
-                  aria-describedby="area-riservata-tooltip-mobile"
-                  className="w-full cursor-not-allowed rounded-md border border-white/30 bg-white/10 px-3 py-2 text-left text-sm font-medium text-white/70"
-                >
-                  {header.ctaAreaRiservata}
-                </button>
-                <span
-                  id="area-riservata-tooltip-mobile"
-                  role="tooltip"
-                  className="mt-1 block text-xs text-muted"
-                >
-                  {header.ctaAreaRiservataTooltip}
-                </span>
-              </div>
+              <a
+                href={studio.portaleUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${areaRiservataClassName} w-full`}
+              >
+                {header.ctaAreaRiservata}
+              </a>
             </li>
           </ul>
         </nav>
