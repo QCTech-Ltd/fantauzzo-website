@@ -308,7 +308,7 @@ export const siteContent = {
       cookies: "Cookie Policy",
       piva: "P.IVA — Da inserire",
     },
-    copyright: "© {year} Studio Fantauzzo. Sviluppato da Alvenco Ltd.",
+    copyright: "© {year} Studio Fantauzzo. Sviluppato dal team QC Tech.",
   },
 } as const;
 

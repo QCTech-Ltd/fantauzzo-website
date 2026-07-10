@@ -37,7 +37,8 @@ export default function Header() {
           href="/"
           className="font-serif text-lg font-semibold tracking-tight text-white sm:text-xl"
         >
-          {header.logo}
+          <span className="text-accent-tint">Studio</span>{" "}
+          <span className="text-white">Fantauzzo</span>
         </Link>
 
         <nav
@@ -54,8 +55,8 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-accent-light ${
-                  isActive ? "text-accent-light" : "text-white/90"
+                className={`text-base font-medium transition-colors hover:text-accent-tint ${
+                  isActive ? "text-accent-tint" : "text-white/90"
                 }`}
                 aria-current={isActive ? "page" : undefined}
               >
@@ -105,10 +106,10 @@ export default function Header() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`block rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+                    className={`block rounded-md px-3 py-2 text-base font-medium transition-colors ${
                       isActive
-                        ? "bg-white/10 text-accent-light"
-                        : "text-white/90 hover:bg-white/5 hover:text-accent-light"
+                        ? "bg-white/10 text-accent-tint"
+                        : "text-white/90 hover:bg-white/5 hover:text-accent-tint"
                     }`}
                     aria-current={isActive ? "page" : undefined}
                   >
