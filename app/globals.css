@@ -1,29 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg: #FDF5F0;
-  --color-accent-light: #F5C49A;
-  --color-primary: #C8502D;
-  --color-dark: #5C1E10;
-  --color-text: #2A1A10;
-  --color-muted: #9A7B6B;
+  --color-bg: #F7F3EF;
+  --color-accent-light: #9C7A3C;
+  --color-primary: #122843;
+  --color-dark: #0B1F3D;
+  --color-text: #1A1A1A;
+  --color-muted: #6B6B6B;
   --color-white: #FFFFFF;
+  --color-accent-tint: #C6A468;
 }
 
 @theme inline {
-  --color-bg: #FDF5F0;
-  --color-accent-light: #F5C49A;
-  --color-primary: #C8502D;
-  --color-dark: #5C1E10;
-  --color-text: #2A1A10;
-  --color-muted: #9A7B6B;
+  --color-bg: #F7F3EF;
+  --color-accent-light: #9C7A3C;
+  --color-primary: #122843;
+  --color-dark: #0B1F3D;
+  --color-text: #1A1A1A;
+  --color-muted: #6B6B6B;
   --color-white: #FFFFFF;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+  --color-accent-tint: #C6A468;
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif), ui-serif, Georgia, serif;
 }
 
 body {
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }

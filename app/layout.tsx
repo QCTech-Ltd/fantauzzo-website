@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { IBM_Plex_Sans, Source_Serif_4 } from "next/font/google";
 import Script from "next/script";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
@@ -8,14 +8,14 @@ import StructuredData from "@/components/shared/StructuredData";
 import { rootMetadata } from "@/lib/metadata";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const ibmPlexSans = IBM_Plex_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const sourceSerif = Source_Serif_4({
+  variable: "--font-serif",
   subsets: ["latin"],
   display: "swap",
 });
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="it"
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+      className={`${ibmPlexSans.variable} ${sourceSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-bg font-sans text-text">
         <StructuredData />
